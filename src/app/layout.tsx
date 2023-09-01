@@ -1,7 +1,12 @@
 import { ClerkProvider } from '@clerk/nextjs'
-import './globals.css'
 import type { Metadata } from 'next'
 import { Navbar } from '@/components/Navbar'
+import './globals.css'
+
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
