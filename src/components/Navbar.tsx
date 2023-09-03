@@ -7,6 +7,7 @@ export function Navbar() {
   const { isLoaded, isSignedIn, user } = useUser();
   if (!isLoaded) return <SkeletonNavbar />;
   if (!isSignedIn || !user) return <></>;
+
   return (
     <nav className='flex w-full justify-between'>
       <Link href='/'>LOGO</Link>

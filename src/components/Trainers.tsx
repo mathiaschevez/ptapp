@@ -18,7 +18,12 @@ export async function PersonalTrainers() {
 
   return !trainers || trainers.length === 0 ? <>No trainers</> : (
     <div>
-      {trainers.map(trainer => <Trainer key={trainer.id} trainer={trainer} />)}
+      {trainers.map(trainer =>
+        <Trainer
+          key={trainer.id}
+          trainer={trainer}
+        />
+      )}
     </div>
   )
 }
