@@ -1,31 +1,18 @@
-'use client';
-import React, { useState } from 'react'
-import { Box, Tab, Tabs } from '@mui/material';
+import supabase from '@/supabase';
+import { auth } from '@clerk/nextjs';
 
-export default function Profile() {
+export default async function Profile() {
+  const { userId } = auth();
+  const { data, error } = await supabase
+    .from('trainers')
+    .select()
+    .eq('userId', userId);
+
+  console.log(data, 'here')
+
   return <div>
-    <ProfileHeader />
-    <ProfileTabs />
+    here
+    {/* <ProfileHeader user={user} />
+    <ProfileTabs user={user} /> */}
   </div>
-}
-
-function ProfileHeader() {
-  return <>
-    Header
-  </>
-}
-
-function ProfileTabs() {
-  const [value, setValue] = useState(0);
-
-
-  return <>
-    <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-    <Tabs value={value} onChange={(e, newValue) => setValue(newValue)} aria-label="basic tabs example">
-      <Tab label="Item One" />
-      <Tab label="Item Two" />
-      <Tab label="Item Three" />
-    </Tabs>
-    </Box>
-  </>
 }
