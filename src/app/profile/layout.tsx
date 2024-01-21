@@ -3,10 +3,8 @@ import Loading from './loading'
 import Profile from './page'
 
 export default function Layout() {
-  return (
-    <Suspense fallback={<Loading />}>
-      <Profile />
-    </Suspense>
-  )
+  return <Suspense fallback={<Loading />}>
+    <Profile />
+  </Suspense>
 }
 
